@@ -17,3 +17,11 @@ jobs:
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         goals: 'package'
+  - job:
+    steps:
+    - script: docker-build
+    - task: Docker@2
+      inputs:
+        repository: 'msh'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
