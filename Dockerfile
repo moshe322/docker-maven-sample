@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the JAR file into the image
-COPY target/docker-maven-sample-0.0.1.jar docker-maven-sample-0.0.1.jar
+COPY target/docker-maven-sample-0.0.1.jar /app/docker-maven-sample-0.0.1.jar
 
 # Specify the command to run when the container starts
 CMD ["java", "-jar", "docker-maven-sample-0.0.1.jar"]
