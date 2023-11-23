@@ -19,7 +19,8 @@ jobs:
         goals: 'package'
   - job:
     steps:
-    - script: docker-build
+    - script: 
+      displayName: echo Docker Build
     - task: Docker@2
       inputs:
         repository: 'msh'
